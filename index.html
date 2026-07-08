@@ -70,5 +70,19 @@ function csv(s){return '"'+String(s).replaceAll('"','""')+'"'}
 function download(content,name,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type}));a.download=name;a.click();URL.revokeObjectURL(a.href)}
 clearForm();render();
 </script>
+  <script>
+const GAS_URL="https://script.google.com/macros/s/AKfycbyZoFwzn-zglWKRx0OGk3jNPtfSJ4nRHz28Xufj-873-P5Hxra_O9Yg4bSoV3G5Jtd45g/exec";
+
+async function savePatient(data){
+
+    const res=await fetch(GAS_URL,{
+        method:"POST",
+        body:JSON.stringify(data)
+    });
+
+    return await res.json();
+
+}
+</script>
 </body>
 </html>
