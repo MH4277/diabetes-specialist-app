@@ -91,7 +91,42 @@ button{border:0;border-radius:10px;padding:10px 13px;font-weight:700;cursor:poin
 <div class="row"><div class="field"><label>sCPR ng/mL</label><input id="scpr" type="number" step="0.01"></div><div class="field"><label>空腹時血糖 mg/dL</label><input id="fpg" type="number" step="1"></div></div>
 <div class="calc">CPI: <span id="cpiView">未計算</span><span>CPI = sCPR × 100 / 空腹時血糖</span></div>
 <div class="field"><label>網膜症</label><select id="retinopathy"><option value="">選択</option><option>なし</option><option>単純</option><option>増殖前</option><option>増殖</option><option>凝固後</option></select></div>
-<div class="row"><div class="field"><label>腎症</label><select id="nephropathy"><option value="">選択</option><option>1期</option><option>2期</option><option>3期</option><option>4期</option><option>5期</option></select></div><div class="field"><label>神経症</label><select id="neuropathy"><option value="">選択</option><option>有</option><option>無</option></select><div class="field">
+<div class="row">
+  <div class="field">
+    <label>腎症</label>
+    <select id="nephropathy">
+      <option value="">選択</option>
+      <option>1期</option>
+      <option>2期</option>
+      <option>3期</option>
+      <option>4期</option>
+      <option>5期</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>神経症</label>
+    <select id="neuropathy">
+      <option value="">選択</option>
+      <option>有</option>
+      <option>無</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="field">
+    <label>UACR mg/gCr</label>
+    <input id="uacr" type="number" step="0.1">
+  </div>
+
+  <div class="field">
+    <label>eGFR mL/min/1.73㎡</label>
+    <input id="egfr" type="number" step="0.1">
+  </div>
+</div>
+
+<div class="field">
   <label>大血管障害</label>
 
   <div class="vascular-options">
@@ -113,9 +148,18 @@ button{border:0;border-radius:10px;padding:10px 13px;font-weight:700;cursor:poin
       <small>末梢動脈疾患</small>
     </label>
   </div>
-</div></div>
-<div class="row"><div class="field"><label>UACR mg/gCr</label><input id="uacr" type="number" step="0.1"></div><div class="field"><label>eGFR mL/min/1.73㎡</label><input id="egfr" type="number" step="0.1"></div></div>
-<div class="field"><label>注射製剤</label><select id="injectable"><option value="">選択</option><option>有：インスリン</option><option>有：GLP-1</option><option>有：インスリン＋GLP-1</option><option>無</option></select></div>
+</div>
+
+<div class="field">
+  <label>注射製剤</label>
+  <select id="injectable">
+    <option value="">選択</option>
+    <option>有：インスリン</option>
+    <option>有：GLP-1</option>
+    <option>有：インスリン＋GLP-1</option>
+    <option>無</option>
+  </select>
+</div>
 <div class="field"><label>治療内容</label><textarea id="treatment" placeholder="例：メトホルミン、SGLT2阻害薬、DPP-4阻害薬、インスリンなど"></textarea></div>
 <div class="field"><label>登録日/診療日</label><input id="visitDate" type="date"></div>
 <div class="btns"><button onclick="savePatient()">保存</button><button class="ghost" onclick="clearForm()">新規入力</button><button class="secondary" onclick="loadDemo()">デモ入力</button></div>
